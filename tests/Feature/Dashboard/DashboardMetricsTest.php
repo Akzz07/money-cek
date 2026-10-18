@@ -37,7 +37,6 @@ final class DashboardMetricsTest extends TestCase
         $response = $this->actingAs($user)->get(route('home'));
 
         $response->assertOk();
-        $response->assertSee('Halo, '.$user->name);
         $response->assertSee('Total Saldo');
         $response->assertSee('Belum Ada Transaksi');
     }

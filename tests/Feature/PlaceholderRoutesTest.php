@@ -26,7 +26,6 @@ final class PlaceholderRoutesTest extends TestCase
         $response = $this->actingAs($user)->get(route('home'));
 
         $response->assertOk();
-        $response->assertSee('Halo, '.$user->name);
         $response->assertSee('Total Saldo');
     }
 

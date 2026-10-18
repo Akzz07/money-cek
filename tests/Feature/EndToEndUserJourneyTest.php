@@ -103,7 +103,6 @@ final class EndToEndUserJourneyTest extends TestCase
         // Net Cash Flow: +9.950.000
         $dashboardResponse = $this->actingAs($user)->get(route('home'));
         $dashboardResponse->assertOk();
-        $dashboardResponse->assertSee('Halo, Akmal Zulfikar');
         $dashboardResponse->assertSee('9.950.000'); // Total Saldo
         $dashboardResponse->assertSee('10.000.000'); // Pemasukan
         $dashboardResponse->assertSee('50.000'); // Pengeluaran

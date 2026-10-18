@@ -1,20 +1,18 @@
 <x-app-layout :activeNav="'home'">
     <div class="px-5 pt-6 pb-6">
-        <!-- Top Header & Sapaan with Interactive Cat Mascot & Dark Mode Toggle -->
+        <h1 class="sr-only">Dashboard Keuangan Monetra</h1>
+
+        <!-- Top Header with Interactive Cat Mascot & Dark Mode Toggle -->
         <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2.5">
+                <!-- Interactive Cat Mascot based on current total balance -->
+                <x-ui.cat-mascot :balance="$metrics->totalBalance" />
+
+                @php
+                    $balVal = (float) $metrics->totalBalance->toDecimalString();
+                @endphp
                 <div>
-                    <div class="flex items-center gap-2">
-                        <h1 class="text-base sm:text-lg font-black text-slate-800 dark:text-slate-100 tracking-tight">
-                            Halo, {{ Auth::user()->name }}
-                        </h1>
-                        <!-- Interactive Cat Mascot based on current total balance -->
-                        <x-ui.cat-mascot :balance="$metrics->totalBalance" />
-                    </div>
-                    @php
-                        $balVal = (float) $metrics->totalBalance->toDecimalString();
-                    @endphp
-                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1 mt-0.5">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1">
                         @if($balVal < 500000)
                             <span class="text-rose-600 dark:text-rose-400 font-semibold flex items-center gap-1">
                                 <span>🩹 Saldo kritis, kucing butuh istirahat!</span>
