@@ -5,8 +5,8 @@
     'actionUrl' => null,
 ])
 
-<div class="flex flex-col items-center justify-center text-center p-8 bg-white rounded-3xl border border-slate-100 shadow-sm my-4">
-    <div class="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+<div class="flex flex-col items-center justify-center text-center p-8 bg-white dark:bg-slate-800/80 rounded-3xl border border-slate-100 dark:border-slate-700/60 shadow-sm my-4 transition-colors">
+    <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
         {{ $icon ?? '' }}
         @unless(isset($icon))
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -14,8 +14,8 @@
             </svg>
         @endunless
     </div>
-    <h3 class="text-base font-bold text-slate-800 mb-1">{{ $title }}</h3>
-    <p class="text-xs sm:text-sm text-slate-500 max-w-xs mb-5">{{ $description }}</p>
+    <h3 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1">{{ $title }}</h3>
+    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xs mb-5">{{ $description }}</p>
     
     @if ($actionText && $actionUrl)
         <x-ui.button :href="$actionUrl" size="sm">

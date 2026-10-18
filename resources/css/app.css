@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    @keyframes cat-shiver {
+        0%, 100% { transform: translateX(0) rotate(0deg); }
+        20% { transform: translateX(-2px) rotate(-1.5deg); }
+        40% { transform: translateX(2px) rotate(1.5deg); }
+        60% { transform: translateX(-1.5px) rotate(-0.5deg); }
+        80% { transform: translateX(1.5px) rotate(0.5deg); }
+    }
+
+    @keyframes cat-bounce {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-5px) scale(1.03); }
+    }
+
+    @keyframes cat-tail {
+        0%, 100% { transform: rotate(-8deg); }
+        50% { transform: rotate(18deg); }
+    }
+
+    @keyframes cat-sparkle {
+        0%, 100% { opacity: 0.2; transform: scale(0.7) rotate(0deg); }
+        50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+    }
+
+    @keyframes pulse-subtle {
+        0%, 100% { transform: scale(1); opacity: 0.95; }
+        50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    .animate-cat-shiver {
+        animation: cat-shiver 0.75s ease-in-out infinite;
+    }
+
+    .animate-cat-bounce {
+        animation: cat-bounce 1.6s ease-in-out infinite;
+    }
+
+    .animate-cat-tail {
+        animation: cat-tail 1.3s ease-in-out infinite;
+        transform-origin: bottom center;
+    }
+
+    .animate-cat-sparkle {
+        animation: cat-sparkle 2.2s ease-in-out infinite;
+    }
+
+    .animate-pulse-subtle {
+        animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+}
+
