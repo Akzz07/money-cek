@@ -80,22 +80,17 @@
                 </div>
             </div>
 
-            <!-- Saldo Awal -->
-            <div>
-                <label for="opening_balance" class="block text-xs font-semibold text-slate-600 mb-1.5">Saldo Awal</label>
-                <div class="relative rounded-2xl border border-slate-200/90 bg-white focus-within:ring-2 focus-within:ring-blue-500 shadow-xs">
-                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">Rp</span>
-                    <input type="text" 
-                           id="opening_balance" 
-                           name="opening_balance" 
-                           value="{{ old('opening_balance', '0') }}" 
-                           required 
-                           placeholder="0" 
-                           class="w-full pl-11 pr-4 py-3 text-base font-bold text-slate-800 bg-transparent focus:outline-none placeholder-slate-300">
-                </div>
-                <p class="text-[11px] text-slate-400 mt-1">Saldo dasar saat pertama kali akun ini dicatat di Monetra.</p>
-                <x-input-error :messages="$errors->get('opening_balance')" class="mt-1.5" />
-            </div>
+            <!-- Saldo Awal dengan Format Otomatis & Terbilang -->
+            <x-ui.money-input 
+                name="opening_balance" 
+                id="opening_balance"
+                label="Saldo Awal" 
+                :value="old('opening_balance', '0')" 
+                placeholder="0" 
+                :required="true"
+                :showPresets="true" />
+            <p class="text-[11px] text-slate-400 -mt-1">Saldo dasar saat pertama kali akun ini dicatat di Monetra.</p>
+
 
             <!-- Tanggal Saldo Awal -->
             <div>

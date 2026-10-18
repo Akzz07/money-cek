@@ -59,25 +59,16 @@
                     @enderror
                 </div>
 
-                <!-- Input: Batas Nominal (Limit Amount) -->
-                <div>
-                    <label for="limit_amount" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Batas Pengeluaran Maksimal</label>
-                    <div class="relative rounded-2xl border @error('limit_amount') border-rose-500 @else border-slate-200/90 @enderror bg-white focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-500 transition-all shadow-xs">
-                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">Rp</span>
-                        <input type="number" 
-                               step="0.01"
-                               min="0.01"
-                               id="limit_amount"
-                               name="limit_amount" 
-                               value="{{ old('limit_amount') }}"
-                               required
-                               placeholder="1.000.000" 
-                               class="w-full pl-12 pr-4 py-3.5 text-xl font-black text-slate-800 bg-transparent focus:outline-none placeholder-slate-300">
-                    </div>
-                    @error('limit_amount')
-                        <p class="mt-1.5 text-xs text-rose-500 font-medium">{{ $message }}</p>
-                    @enderror
-                </div>
+                <!-- Input: Batas Nominal (Limit Amount) dengan Format Otomatis & Terbilang -->
+                <x-ui.money-input 
+                    name="limit_amount" 
+                    id="limit_amount"
+                    label="Batas Pengeluaran Maksimal" 
+                    :value="old('limit_amount')" 
+                    placeholder="1.000.000" 
+                    :required="true"
+                    :showPresets="true" />
+
 
                 <!-- Input: Ambang Peringatan (Warning Threshold) -->
                 <div>

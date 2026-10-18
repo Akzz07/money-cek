@@ -33,25 +33,16 @@
                 @enderror
             </div>
 
-            <!-- Input: Nominal Tagihan -->
-            <div>
-                <label for="amount" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Nominal Tagihan</label>
-                <div class="relative rounded-2xl border @error('amount') border-rose-500 @else border-slate-200/90 @enderror bg-white focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-500 transition-all shadow-xs">
-                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">Rp</span>
-                    <input type="number" 
-                           step="0.01"
-                           min="0.01"
-                           id="amount"
-                           name="amount" 
-                           value="{{ old('amount') }}"
-                           required
-                           placeholder="0" 
-                           class="w-full pl-12 pr-4 py-3.5 text-xl font-black text-slate-800 bg-transparent focus:outline-none placeholder-slate-300">
-                </div>
-                @error('amount')
-                    <p class="mt-1.5 text-xs text-rose-500 font-medium">{{ $message }}</p>
-                @enderror
-            </div>
+            <!-- Input: Nominal Tagihan dengan Format Otomatis & Terbilang -->
+            <x-ui.money-input 
+                name="amount" 
+                id="amount"
+                label="Nominal Tagihan" 
+                :value="old('amount')" 
+                placeholder="0" 
+                :required="true"
+                :showPresets="true" />
+
 
             <!-- Input: Tanggal Jatuh Tempo -->
             <div>

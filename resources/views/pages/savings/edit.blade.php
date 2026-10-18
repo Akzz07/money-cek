@@ -33,24 +33,16 @@
                 @enderror
             </div>
 
-            <!-- Input: Nominal Target -->
-            <div>
-                <label for="target_amount" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Nominal Target Akhir</label>
-                <div class="relative rounded-2xl border @error('target_amount') border-rose-500 @else border-slate-200/90 @enderror bg-white focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-500 transition-all shadow-xs">
-                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">Rp</span>
-                    <input type="number" 
-                           step="0.01"
-                           min="0.01"
-                           id="target_amount"
-                           name="target_amount" 
-                           value="{{ old('target_amount', $savingsGoal->target_amount->toDecimalString()) }}"
-                           required
-                           class="w-full pl-12 pr-4 py-3.5 text-xl font-black text-slate-800 bg-transparent focus:outline-none">
-                </div>
-                @error('target_amount')
-                    <p class="mt-1.5 text-xs text-rose-500 font-medium">{{ $message }}</p>
-                @enderror
-            </div>
+            <!-- Input: Nominal Target dengan Format Otomatis & Terbilang -->
+            <x-ui.money-input 
+                name="target_amount" 
+                id="target_amount"
+                label="Nominal Target Akhir" 
+                :value="old('target_amount', $savingsGoal->target_amount->toDecimalString())" 
+                placeholder="0" 
+                :required="true"
+                :showPresets="true" />
+
 
             <!-- Input: Status Target -->
             <div>

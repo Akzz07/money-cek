@@ -225,10 +225,13 @@
                     @csrf
                     <input type="hidden" name="direction" value="contribution">
 
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Nominal Setoran (Rp)</label>
-                        <input type="number" step="0.01" min="1" name="amount" required placeholder="Contoh: 500000" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-slate-800" />
-                    </div>
+                    <x-ui.money-input 
+                        name="amount" 
+                        label="Nominal Setoran" 
+                        placeholder="Contoh: 500.000" 
+                        :required="true"
+                        :showPresets="true" />
+
 
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Tanggal</label>
