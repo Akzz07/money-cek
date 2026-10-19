@@ -185,10 +185,6 @@
             </span>
         </div>
 
-        <!-- Inline Click Hint Chip -->
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide border {{ $badgeClass }}">
-            {{ $label }}
-        </span>
     </button>
 
     <!-- Interactive Dialogue Modal / Cat Speech Bubble -->
