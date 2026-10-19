@@ -54,9 +54,9 @@
                     </button>
                     <button type="button" 
                             @click="tab = 'transfer'; selectedCategory = ''" 
-                            :class="tab === 'transfer' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900'"
+                            :class="tab === 'transfer' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900'"
                             class="py-2.5 rounded-xl transition-all text-center flex items-center justify-center gap-1">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 inline-block"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-sky-500 inline-block"></span>
                         <span>Transfer</span>
                     </button>
                 </div>
@@ -78,7 +78,7 @@
                     <select id="source_account_id" 
                             name="source_account_id" 
                             required
-                            class="w-full px-4 py-3 bg-white border @error('source_account_id') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-xs">
+                            class="w-full px-4 py-3 bg-white border @error('source_account_id') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs">
                         <option value="" disabled {{ old('source_account_id') ? '' : 'selected' }}>Pilih Akun</option>
                         @foreach($accounts as $account)
                             <option value="{{ $account->id }}" {{ (string) old('source_account_id') === (string) $account->id ? 'selected' : '' }}>
@@ -96,7 +96,7 @@
                     <label for="destination_account_id" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Akun Penerima (Tujuan)</label>
                     <select id="destination_account_id" 
                             name="destination_account_id" 
-                            class="w-full px-4 py-3 bg-white border @error('destination_account_id') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-xs">
+                            class="w-full px-4 py-3 bg-white border @error('destination_account_id') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs">
                         <option value="" disabled {{ old('destination_account_id') ? '' : 'selected' }}>Pilih Akun Penerima</option>
                         @foreach($accounts as $account)
                             <option value="{{ $account->id }}" {{ (string) old('destination_account_id') === (string) $account->id ? 'selected' : '' }}>
@@ -151,7 +151,7 @@
                            name="transaction_date" 
                            value="{{ old('transaction_date', date('Y-m-d')) }}" 
                            required 
-                           class="w-full px-4 py-3 bg-white border @error('transaction_date') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-xs">
+                           class="w-full px-4 py-3 bg-white border @error('transaction_date') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs">
                     @error('transaction_date')
                         <p class="mt-1.5 text-xs text-rose-500 font-medium">{{ $message }}</p>
                     @enderror
@@ -165,7 +165,7 @@
                            name="description" 
                            value="{{ old('description') }}" 
                            placeholder="Contoh: Makan siang nasi padang" 
-                           class="w-full px-4 py-3 bg-white border border-slate-200/90 rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-xs placeholder-slate-300">
+                           class="w-full px-4 py-3 bg-white border border-slate-200/90 rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs placeholder-slate-300">
                 </div>
 
                 <!-- Input: Catatan Tambahan (opsional) -->
@@ -175,15 +175,15 @@
                               name="notes" 
                               rows="2" 
                               placeholder="Detail tambahan jika diperlukan..." 
-                              class="w-full p-3.5 text-sm text-slate-800 bg-white border border-slate-200/90 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-xs placeholder-slate-300 resize-none">{{ old('notes') }}</textarea>
+                              class="w-full p-3.5 text-sm text-slate-800 bg-white border border-slate-200/90 rounded-2xl focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs placeholder-slate-300 resize-none">{{ old('notes') }}</textarea>
                 </div>
 
                 <!-- Button: Simpan Transaksi -->
                 <div class="pt-2">
                     <button type="submit" 
                             :disabled="submitting" 
-                            :class="submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-blue-700 active:scale-95 shadow-blue-500/25'" 
-                            class="w-full py-4 text-base font-bold bg-blue-600 text-white rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
+                            :class="submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-sky-700 active:scale-95 shadow-sky-500/25'" 
+                            class="w-full py-4 text-base font-bold bg-sky-600 text-white rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
                         <span x-show="!submitting">Simpan Transaksi</span>
                         <span x-show="submitting" x-cloak class="flex items-center gap-2">
                             <svg class="animate-spin w-5 h-5 text-white" fill="none" viewBox="0 0 24 24">

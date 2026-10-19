@@ -1,7 +1,7 @@
 <x-guest-layout>
     <!-- Logo & Brand Header -->
     <div class="text-center mb-8">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-blue-600 text-white shadow-lg shadow-blue-500/30 mb-3">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-sky-600 text-white shadow-lg shadow-sky-500/30 mb-3">
             <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
@@ -21,7 +21,7 @@
         <!-- Email Input -->
         <div>
             <label for="email" class="block text-xs font-semibold text-slate-600 mb-1.5">Email</label>
-            <div class="relative rounded-2xl border border-slate-200/90 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent transition-all shadow-xs">
+            <div class="relative rounded-2xl border border-slate-200/90 focus-within:ring-2 focus-within:ring-sky-500 focus-within:border-transparent transition-all shadow-xs">
                 <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
@@ -43,13 +43,13 @@
             <div class="flex items-center justify-between mb-1.5">
                 <label for="password" class="block text-xs font-semibold text-slate-600">Kata Sandi</label>
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="text-xs font-semibold text-blue-600 hover:text-blue-700">
+                    <a href="{{ route('password.request') }}" class="text-xs font-semibold text-sky-600 hover:text-sky-700">
                         Lupa kata sandi?
                     </a>
                 @endif
             </div>
 
-            <div class="relative rounded-2xl border border-slate-200/90 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent transition-all shadow-xs">
+            <div class="relative rounded-2xl border border-slate-200/90 focus-within:ring-2 focus-within:ring-sky-500 focus-within:border-transparent transition-all shadow-xs">
                 <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                 </svg>
@@ -78,7 +78,7 @@
                 <input id="remember_me" 
                        type="checkbox" 
                        name="remember" 
-                       class="rounded-md border-slate-300 text-blue-600 shadow-xs focus:ring-blue-500">
+                       class="rounded-md border-slate-300 text-sky-600 shadow-xs focus:ring-sky-500">
                 <span class="ms-2 text-xs text-slate-600 font-medium">Ingat saya di perangkat ini</span>
             </label>
         </div>

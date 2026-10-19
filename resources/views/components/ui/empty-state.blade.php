@@ -6,7 +6,7 @@
 ])
 
 <div class="flex flex-col items-center justify-center text-center p-8 bg-white dark:bg-slate-800/80 rounded-3xl border border-slate-100 dark:border-slate-700/60 shadow-sm my-4 transition-colors">
-    <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+    <div class="w-16 h-16 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-4">
         {{ $icon ?? '' }}
         @unless(isset($icon))
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">

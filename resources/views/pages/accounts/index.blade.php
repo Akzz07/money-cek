@@ -30,7 +30,7 @@
                             <div class="flex items-center gap-3">
                                 <!-- Type Icon Badge -->
                                 <div class="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 {{ match($account->type->value) {
-                                    'bank' => 'bg-blue-50 text-blue-600',
+                                    'bank' => 'bg-sky-50 text-sky-600',
                                     'e_wallet' => 'bg-emerald-50 text-emerald-600',
                                     'cash' => 'bg-amber-50 text-amber-600',
                                     'investment' => 'bg-purple-50 text-purple-600',
@@ -64,7 +64,7 @@
 
                             <!-- Actions Menu -->
                             <div class="flex items-center gap-1">
-                                <a href="{{ route('accounts.edit', $account) }}" class="p-1.5 text-slate-400 hover:text-blue-600 transition-colors" aria-label="Edit Akun">
+                                <a href="{{ route('accounts.edit', $account) }}" class="p-1.5 text-slate-400 hover:text-sky-600 transition-colors" aria-label="Edit Akun">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                                 </a>
                             </div>

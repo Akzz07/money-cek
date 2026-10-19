@@ -23,9 +23,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-500 selection:text-white transition-colors duration-200">
-        <!-- Centered Mobile Container -->
-        <div class="min-h-screen max-w-md mx-auto bg-slate-50 dark:bg-slate-900 relative flex flex-col shadow-2xl border-x border-slate-200/80 dark:border-slate-800/80 pb-20 transition-colors duration-200">
+    <body class="font-sans antialiased bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-200">
+        <!-- Centered Mobile Container with Variant 5 Blue Sky Ambient Glow -->
+        <div class="min-h-screen max-w-md mx-auto bg-gradient-to-b from-sky-100/70 via-sky-50/30 to-slate-50 dark:from-[#0B1528] dark:via-slate-900 dark:to-slate-950 relative flex flex-col shadow-2xl border-x border-slate-200/80 dark:border-slate-800/80 pb-20 transition-colors duration-200">
             <!-- Main Content Area -->
             <main class="flex-1 w-full">
                 {{ $slot }}

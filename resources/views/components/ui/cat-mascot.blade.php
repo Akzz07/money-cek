@@ -47,8 +47,8 @@
         $dialogTitle = 'Ngeong! Langkah Perintis Finansial! 🚀';
         $dialogMessage = 'Saldomu mencapai jutaan rupiah (Rp 1jt - 10jt)! Kucingmu berenergi dan siap menemani langkah perintis investasimu!';
         $dialogTip = 'Disiplin anggaran dan alokasikan ke tujuan finansial jangka panjang.';
-        $glowColor = 'from-blue-500/20 to-blue-500/5';
-        $badgeClass = 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800';
+        $glowColor = 'from-sky-500/20 to-sky-500/5';
+        $badgeClass = 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800';
         $animClass = 'animate-cat-bounce';
     } else {
         $state = 'healthy';
@@ -253,7 +253,7 @@
             <!-- Speech Message -->
             <div class="bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/60 rounded-2xl p-3.5 text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-left">
                 <p class="font-medium mb-2">{{ $dialogMessage }}</p>
-                <div class="pt-2 border-t border-slate-200/50 dark:border-slate-700/50 flex items-start gap-1.5 text-[11px] text-blue-600 dark:text-blue-400 font-semibold">
+                <div class="pt-2 border-t border-slate-200/50 dark:border-slate-700/50 flex items-start gap-1.5 text-[11px] text-sky-600 dark:text-sky-400 font-semibold">
                     <span>{{ $dialogTip }}</span>
                 </div>
             </div>
@@ -266,7 +266,7 @@
                     <span>Meong Lagi!</span> 🐾
                 </button>
                 <a href="{{ route('transactions.create') }}"
-                   class="py-2.5 px-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-500/20 active:scale-95 transition-all flex items-center justify-center">
+                   class="py-2.5 px-3 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold shadow-md shadow-sky-500/20 active:scale-95 transition-all flex items-center justify-center">
                     Catat Transaksi
                 </a>
             </div>

@@ -27,7 +27,7 @@
             <a href="{{ route('budgets.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-500 hover:text-slate-800 transition-colors">
                 Anggaran
             </a>
-            <a href="{{ route('bills.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-blue-600 shadow-xs font-bold transition-all">
+            <a href="{{ route('bills.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-sky-600 shadow-xs font-bold transition-all">
                 Tagihan
             </a>
             <a href="{{ route('savings-goals.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-500 hover:text-slate-800 transition-colors">
@@ -83,7 +83,7 @@
         <!-- Filter Tabs -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-2 text-xs">
             <a href="{{ route('bills.index') }}" 
-               class="px-3.5 py-1.5 rounded-full font-medium transition-all {{ !request('tab') ? 'bg-blue-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50' }}">
+               class="px-3.5 py-1.5 rounded-full font-medium transition-all {{ !request('tab') ? 'bg-sky-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50' }}">
                 Semua
             </a>
             <a href="{{ route('bills.index', ['tab' => 'upcoming']) }}" 
@@ -194,7 +194,7 @@
                                 @if(! $bill->isPaid())
                                     <button type="button" 
                                             @click="openPayModal({{ $bill->id }}, '{{ addslashes($bill->name) }}', '@money($bill->amount)')" 
-                                            class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs shadow-xs transition-colors">
+                                            class="px-3.5 py-1.5 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl text-xs shadow-xs transition-colors">
                                         Bayar Sekarang
                                     </button>
                                 @else
@@ -221,12 +221,12 @@
                  class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl space-y-4">
                 
                 <div class="text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-2">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mx-auto mb-2">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                     </div>
                     <h3 class="text-base font-bold text-slate-800">Bayar Tagihan</h3>
                     <p class="text-xs text-slate-500 mt-0.5">
-                        <span class="font-bold text-slate-800" x-text="payBillName"></span> sebesar <span class="font-extrabold text-blue-600" x-text="payBillAmount"></span>
+                        <span class="font-bold text-slate-800" x-text="payBillName"></span> sebesar <span class="font-extrabold text-sky-600" x-text="payBillAmount"></span>
                     </p>
                 </div>
 
@@ -234,7 +234,7 @@
                     @csrf
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Pilih Akun Sumber Pembayaran</label>
-                        <select name="source_account_id" required class="w-full px-3 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <select name="source_account_id" required class="w-full px-3 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500">
                             @foreach($accounts as $acc)
                                 <option value="{{ $acc->id }}">{{ $acc->name }} ({{ $acc->type->label() }})</option>
                             @endforeach
@@ -243,7 +243,7 @@
 
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Catatan Tambahan (opsional)</label>
-                        <input type="text" name="notes" placeholder="Contoh: No. Referensi Transaksi" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input type="text" name="notes" placeholder="Contoh: No. Referensi Transaksi" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500" />
                     </div>
 
                     <div class="grid grid-cols-2 gap-2 pt-2">
@@ -253,7 +253,7 @@
                             Batal
                         </button>
                         <button type="submit" 
-                                class="py-2.5 px-3 bg-blue-600 text-white font-semibold text-xs rounded-xl hover:bg-blue-700 transition-colors">
+                                class="py-2.5 px-3 bg-sky-600 text-white font-semibold text-xs rounded-xl hover:bg-sky-700 transition-colors">
                             Konfirmasi Bayar
                         </button>
                     </div>

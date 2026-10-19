@@ -112,14 +112,14 @@
                 <textarea id="notes" 
                           name="notes" 
                           rows="2" 
-                          class="w-full px-4 py-3 bg-white border @error('notes') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-xs">{{ old('notes', $savingsGoal->notes) }}</textarea>
+                          class="w-full px-4 py-3 bg-white border @error('notes') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs">{{ old('notes', $savingsGoal->notes) }}</textarea>
             </div>
 
             <!-- Submit Button -->
             <div class="pt-2">
                 <button type="submit" 
                         :disabled="submitting"
-                        class="w-full py-4 px-4 bg-gradient-to-r from-blue-700 to-blue-600 text-white font-bold text-sm rounded-2xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:from-blue-800 hover:to-blue-700 active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-70">
+                        class="w-full py-4 px-4 bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 text-white font-bold text-sm rounded-2xl shadow-lg shadow-sky-500/30 hover:shadow-xl hover:from-sky-700 hover:to-blue-700 active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-70">
                     <span x-show="!submitting">Perbarui Target Tabungan</span>
                     <span x-show="submitting" x-cloak>Memperbarui Target...</span>
                 </button>

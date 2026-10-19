@@ -17,19 +17,19 @@
         <!-- Period Selection Tabs -->
         <div class="flex items-center bg-slate-100/90 p-1 rounded-2xl text-xs font-semibold overflow-x-auto no-scrollbar">
             <a href="{{ route('assets.index', ['period' => 'this_month']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_month' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_month' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
                 Bulan Ini
             </a>
             <a href="{{ route('assets.index', ['period' => 'last_month']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_month' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_month' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
                 Bulan Lalu
             </a>
             <a href="{{ route('assets.index', ['period' => 'last_3_months']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_3_months' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_3_months' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
                 3 Bulan
             </a>
             <a href="{{ route('assets.index', ['period' => 'this_year']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_year' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_year' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
                 Tahun Ini
             </a>
         </div>
@@ -37,7 +37,7 @@
         <!-- Ringkasan Kekayaan Bersih (Net Worth Hero Card) -->
         <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 rounded-3xl p-5 text-white shadow-xl shadow-slate-900/15 relative overflow-hidden">
             <!-- Decorative blur shape -->
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-blue-500/10 rounded-full blur-xl pointer-events-none"></div>
+            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-sky-500/10 rounded-full blur-xl pointer-events-none"></div>
 
             <div class="flex items-center justify-between text-slate-400 text-xs font-semibold mb-1">
                 <span>Total Kekayaan Bersih</span>
@@ -103,9 +103,9 @@
                     </span>
                 </div>
 
-                <div class="p-2.5 bg-blue-50/70 border border-blue-100 rounded-2xl">
-                    <span class="text-[10px] text-blue-700 font-bold block mb-0.5">Arus Kas Bersih</span>
-                    <span class="text-xs sm:text-sm font-black {{ $overview->netCashFlow->isNegative() ? 'text-rose-600' : 'text-blue-700' }} block truncate">
+                <div class="p-2.5 bg-sky-50/70 border border-sky-100 rounded-2xl">
+                    <span class="text-[10px] text-sky-700 font-bold block mb-0.5">Arus Kas Bersih</span>
+                    <span class="text-xs sm:text-sm font-black {{ $overview->netCashFlow->isNegative() ? 'text-rose-600' : 'text-sky-700' }} block truncate">
                         {{ $overview->netCashFlow->isNegative() ? '-' : '+' }}@money($overview->netCashFlow->abs())
                     </span>
                 </div>
@@ -165,7 +165,7 @@
 
             <div class="flex items-center justify-between pt-2 text-[10px] text-slate-400">
                 <span>* Angka transfer antar rekening dan penyesuaian saldo dikecualikan.</span>
-                <button type="button" @click="showTable = !showTable" class="text-blue-600 hover:underline font-semibold">
+                <button type="button" @click="showTable = !showTable" class="text-sky-600 hover:underline font-semibold">
                     <span x-text="showTable ? 'Sembunyikan Tabel' : 'Lihat Data Tabel'"></span>
                 </button>
             </div>

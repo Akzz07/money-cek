@@ -32,7 +32,7 @@
             <a href="{{ route('bills.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-500 hover:text-slate-800 transition-colors">
                 Tagihan
             </a>
-            <a href="{{ route('savings-goals.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-blue-600 shadow-xs font-bold transition-all">
+            <a href="{{ route('savings-goals.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-sky-600 shadow-xs font-bold transition-all">
                 Tabungan
             </a>
         </div>
@@ -52,10 +52,10 @@
         @endif
 
         <!-- Summary Overview Card (Layar #7 Mockup) -->
-        <x-ui.card padding="p-4 sm:p-5" class="mb-4 bg-gradient-to-br from-white to-blue-50/40 border-blue-100">
+        <x-ui.card padding="p-4 sm:p-5" class="mb-4 bg-gradient-to-br from-white to-sky-50/40 border-sky-100">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Terkumpul</span>
-                <span class="text-xs font-extrabold text-blue-600 bg-blue-100/80 px-2.5 py-0.5 rounded-full">
+                <span class="text-xs font-extrabold text-sky-600 bg-sky-100/80 px-2.5 py-0.5 rounded-full">
                     {{ $overview->overallPercentage }}% Tercapai
                 </span>
             </div>
@@ -71,7 +71,7 @@
 
             <!-- Overall Progress Bar -->
             <div class="w-full bg-slate-200/80 rounded-full h-2.5 mb-3.5 overflow-hidden">
-                <div class="h-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-500" 
+                <div class="h-2.5 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 transition-all duration-500" 
                      style="width: {{ min($overview->overallPercentage, 100) }}%"></div>
             </div>
 
@@ -99,7 +99,7 @@
                 Semua
             </a>
             <a href="{{ route('savings-goals.index', ['status' => 'active']) }}" 
-               class="px-3 py-1.5 rounded-xl font-medium whitespace-nowrap transition-colors {{ $statusParam === 'active' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
+               class="px-3 py-1.5 rounded-xl font-medium whitespace-nowrap transition-colors {{ $statusParam === 'active' ? 'bg-sky-600 text-white font-bold shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
                 Aktif
             </a>
             <a href="{{ route('savings-goals.index', ['status' => 'completed']) }}" 
@@ -115,7 +115,7 @@
         <!-- Goals List -->
         @if($overview->goals->isEmpty())
             <x-ui.card padding="p-8" class="text-center">
-                <div class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-3">
+                <div class="w-14 h-14 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center mx-auto mb-3">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <h3 class="text-sm font-bold text-slate-800 mb-1">Belum Ada Target Tabungan</h3>
@@ -172,7 +172,7 @@
                             </div>
 
                             <div class="flex items-center justify-between text-[11px] text-slate-500 pt-0.5">
-                                <span class="font-bold text-blue-600">{{ $item->percentage }}%</span>
+                                <span class="font-bold text-sky-600">{{ $item->percentage }}%</span>
                                 @if($item->surplusAmount)
                                     <span class="text-emerald-600 font-bold">Surplus: +@money($item->surplusAmount)</span>
                                 @else
@@ -191,7 +191,7 @@
                             <div class="flex items-center gap-1.5">
                                 <button type="button" 
                                         @click="openEntryModal({{ $goal->id }}, '{{ addslashes($goal->name) }}', '{{ $goal->color }}', 'contribution')"
-                                        class="px-3 py-1.5 bg-blue-50 text-blue-700 hover:bg-blue-100 font-semibold rounded-xl transition-colors flex items-center gap-1">
+                                        class="px-3 py-1.5 bg-sky-50 text-sky-700 hover:bg-sky-100 font-semibold rounded-xl transition-colors flex items-center gap-1">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                                     <span>Setor</span>
                                 </button>
@@ -235,12 +235,12 @@
 
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Tanggal</label>
-                        <input type="date" name="entry_date" required value="{{ now()->toDateString() }}" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input type="date" name="entry_date" required value="{{ now()->toDateString() }}" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500" />
                     </div>
 
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Pilih Akun Sumber (opsional)</label>
-                        <select name="account_id" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <select name="account_id" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500">
                             <option value="">-- Hanya Catat Alokasi (Tanpa Transfer) --</option>
                             @foreach($accounts as $acc)
                                 <option value="{{ $acc->id }}">{{ $acc->name }} (Saldo: @money($acc->opening_balance))</option>
@@ -251,7 +251,7 @@
 
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Catatan Tambahan (opsional)</label>
-                        <input type="text" name="notes" placeholder="Contoh: Sisa THR / Bonus Proyek" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input type="text" name="notes" placeholder="Contoh: Sisa THR / Bonus Proyek" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500" />
                     </div>
 
                     <div class="grid grid-cols-2 gap-2 pt-2">
@@ -261,7 +261,7 @@
                             Batal
                         </button>
                         <button type="submit" 
-                                class="py-2.5 px-3 bg-blue-600 text-white font-semibold text-xs rounded-xl hover:bg-blue-700 transition-colors shadow-xs">
+                                class="py-2.5 px-3 bg-sky-600 text-white font-semibold text-xs rounded-xl hover:bg-sky-700 transition-colors shadow-xs">
                             Simpan Setoran
                         </button>
                     </div>

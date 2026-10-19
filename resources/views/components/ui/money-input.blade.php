@@ -156,7 +156,7 @@
                 <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide transition-all"
                       :class="{
                           'bg-slate-100 text-slate-600 border border-slate-200': scale === 'Satuan' || scale === 'Puluhan' || scale === 'Ratusan',
-                          'bg-blue-50 text-blue-700 border border-blue-200': scale === 'Ribuan' || scale === 'Puluhan Ribu',
+                          'bg-sky-50 text-sky-700 border border-sky-200': scale === 'Ribuan' || scale === 'Puluhan Ribu',
                           'bg-indigo-50 text-indigo-700 border border-indigo-200': scale === 'Ratusan Ribu',
                           'bg-emerald-50 text-emerald-700 border border-emerald-200': scale === 'Jutaan' || scale === 'Puluhan Juta' || scale === 'Ratusan Juta',
                           'bg-amber-50 text-amber-700 border border-amber-200': scale === 'Miliaran' || scale === 'Triliunan'
@@ -168,7 +168,7 @@
     @endif
 
     <!-- Main Input Box with Formatting -->
-    <div class="relative rounded-2xl border @error($name) border-rose-500 @else border-slate-200/90 @enderror bg-white focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-500 transition-all shadow-xs">
+    <div class="relative rounded-2xl border @error($name) border-rose-500 @else border-slate-200/90 @enderror bg-white focus-within:ring-2 focus-within:ring-sky-500/20 focus-within:border-sky-500 transition-all shadow-xs">
         <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400 select-none">Rp</span>
         
         <!-- Display Input with Thousand Separators -->
@@ -226,7 +226,7 @@
             </button>
             <button type="button"
                     @click="appendZeros('000')"
-                    class="px-2.5 py-1 text-xs font-extrabold rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 active:scale-95 transition-all whitespace-nowrap"
+                    class="px-2.5 py-1 text-xs font-extrabold rounded-lg bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 active:scale-95 transition-all whitespace-nowrap"
                     title="Tambah tiga nol (.000 - Ribuan)">
                 +000 <span class="text-[10px] opacity-75 font-semibold">Ribu</span>
             </button>

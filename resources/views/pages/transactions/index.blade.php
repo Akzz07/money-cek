@@ -58,7 +58,7 @@
                        name="search" 
                        value="{{ request('search') }}" 
                        placeholder="Cari transaksi atau catatan..." 
-                       class="w-full pl-10 pr-20 py-2.5 text-xs bg-white border border-slate-200/80 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-xs" />
+                       class="w-full pl-10 pr-20 py-2.5 text-xs bg-white border border-slate-200/80 rounded-2xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all shadow-xs" />
                 
                 <div class="absolute right-1.5 flex items-center gap-1">
                     @if(request('search'))
@@ -68,7 +68,7 @@
                     @endif
                     <button type="button" 
                             @click="filterOpen = !filterOpen" 
-                            :class="filterOpen ? 'bg-blue-50 text-blue-600 border-blue-200' : 'bg-slate-50 text-slate-600 border-slate-200'"
+                            :class="filterOpen ? 'bg-sky-50 text-sky-600 border-sky-200' : 'bg-slate-50 text-slate-600 border-slate-200'"
                             class="px-2.5 py-1 text-[11px] font-semibold border rounded-xl flex items-center gap-1 transition-colors">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
                         <span>Filter</span>
@@ -81,7 +81,7 @@
                 <div class="grid grid-cols-2 gap-2">
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Akun</label>
-                        <select name="account_id" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none">
+                        <select name="account_id" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-sky-500 focus:outline-none">
                             <option value="">Semua Akun</option>
                             @foreach($accounts as $acc)
                                 <option value="{{ $acc->id }}" @selected(request('account_id') == $acc->id)>
@@ -93,7 +93,7 @@
 
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Kategori</label>
-                        <select name="category_id" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none">
+                        <select name="category_id" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-sky-500 focus:outline-none">
                             <option value="">Semua Kategori</option>
                             @foreach($categories as $cat)
                                 <option value="{{ $cat->id }}" @selected(request('category_id') == $cat->id)>
@@ -107,11 +107,11 @@
                 <div class="grid grid-cols-2 gap-2">
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Dari Tanggal</label>
-                        <input type="date" name="start_date" value="{{ request('start_date') }}" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none" />
+                        <input type="date" name="start_date" value="{{ request('start_date') }}" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-sky-500 focus:outline-none" />
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Sampai Tanggal</label>
-                        <input type="date" name="end_date" value="{{ request('end_date') }}" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none" />
+                        <input type="date" name="end_date" value="{{ request('end_date') }}" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-sky-500 focus:outline-none" />
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                     <a href="{{ route('transactions.index') }}" class="text-[11px] text-slate-500 hover:text-slate-800 font-semibold underline">
                         Reset Semua Filter
                     </a>
-                    <button type="submit" class="px-4 py-1.5 bg-blue-600 text-white font-semibold rounded-xl text-xs hover:bg-blue-700 transition-colors">
+                    <button type="submit" class="px-4 py-1.5 bg-sky-600 text-white font-semibold rounded-xl text-xs hover:bg-sky-700 transition-colors">
                         Terapkan Filter
                     </button>
                 </div>
@@ -132,7 +132,7 @@
                 $baseParams = request()->except(['type', 'page']);
             @endphp
             <a href="{{ route('transactions.index', $baseParams) }}" 
-               class="px-3.5 py-1.5 rounded-full font-medium transition-all {{ !request('type') ? 'bg-blue-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50' }}">
+               class="px-3.5 py-1.5 rounded-full font-medium transition-all {{ !request('type') ? 'bg-sky-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50' }}">
                 Semua
             </a>
             <a href="{{ route('transactions.index', array_merge($baseParams, ['type' => 'expense'])) }}" 
@@ -144,7 +144,7 @@
                 Pemasukan
             </a>
             <a href="{{ route('transactions.index', array_merge($baseParams, ['type' => 'transfer'])) }}" 
-               class="px-3.5 py-1.5 rounded-full font-medium transition-all {{ request('type') === 'transfer' ? 'bg-blue-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50' }}">
+               class="px-3.5 py-1.5 rounded-full font-medium transition-all {{ request('type') === 'transfer' ? 'bg-sky-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50' }}">
                 Transfer
             </a>
         </div>
@@ -200,7 +200,7 @@
                                                 <div class="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 font-bold text-sm {{ match($tx->type->value) {
                                                     'income' => 'bg-emerald-50 text-emerald-600',
                                                     'expense' => 'bg-rose-50 text-rose-600',
-                                                    'transfer' => 'bg-blue-50 text-blue-600',
+                                                    'transfer' => 'bg-sky-50 text-sky-600',
                                                     'adjustment' => 'bg-purple-50 text-purple-600',
                                                     default => 'bg-slate-100 text-slate-600',
                                                 } }}">
@@ -235,7 +235,7 @@
                                                 <p class="text-xs sm:text-sm font-bold {{ $tx->isVoided() ? 'line-through text-slate-400' : match($tx->type->value) {
                                                     'income' => 'text-emerald-600',
                                                     'expense' => 'text-slate-800',
-                                                    'transfer' => 'text-blue-600',
+                                                    'transfer' => 'text-sky-600',
                                                     'adjustment' => 'text-purple-700',
                                                     default => 'text-slate-700',
                                                 } }}">
@@ -286,11 +286,11 @@
                             <span class="text-2xl font-extrabold" :class="{
                                 'text-emerald-600': selectedTx.type === 'income',
                                 'text-slate-900': selectedTx.type === 'expense',
-                                'text-blue-600': selectedTx.type === 'transfer',
+                                'text-sky-600': selectedTx.type === 'transfer',
                                 'text-purple-700': selectedTx.type === 'adjustment'
                             }" x-text="selectedTx.amount"></span>
                             <div class="mt-1">
-                                <span class="px-2 py-0.5 rounded-full font-semibold text-[11px]" :class="selectedTx.isVoided ? 'bg-slate-200 text-slate-700' : 'bg-blue-100 text-blue-700'" x-text="selectedTx.isVoided ? 'Dibatalkan (Void)' : selectedTx.typeLabel"></span>
+                                <span class="px-2 py-0.5 rounded-full font-semibold text-[11px]" :class="selectedTx.isVoided ? 'bg-slate-200 text-slate-700' : 'bg-sky-100 text-sky-700'" x-text="selectedTx.isVoided ? 'Dibatalkan (Void)' : selectedTx.typeLabel"></span>
                             </div>
                         </div>
 

@@ -15,7 +15,7 @@
     <!-- Scripts and Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="h-full bg-slate-100 text-slate-800 antialiased flex justify-center items-start selection:bg-blue-500 selection:text-white">
+<body class="h-full bg-slate-100 text-slate-800 antialiased flex justify-center items-start selection:bg-sky-500 selection:text-white">
     <div class="w-full max-w-md min-h-screen bg-white sm:shadow-2xl sm:border-x sm:border-slate-200 flex flex-col justify-center px-6 py-12">
         {{ $slot }}
     </div>

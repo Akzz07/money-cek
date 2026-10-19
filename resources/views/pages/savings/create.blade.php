@@ -112,7 +112,7 @@
             <div class="pt-2">
                 <button type="submit" 
                         :disabled="submitting"
-                        class="w-full py-4 px-4 bg-gradient-to-r from-blue-700 to-blue-600 text-white font-bold text-sm rounded-2xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:from-blue-800 hover:to-blue-700 active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-70">
+                        class="w-full py-4 px-4 bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 text-white font-bold text-sm rounded-2xl shadow-lg shadow-sky-500/30 hover:shadow-xl hover:from-sky-700 hover:to-blue-700 active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-70">
                     <span x-show="!submitting">Simpan Target Tabungan</span>
                     <span x-show="submitting" x-cloak>Menyimpan Target...</span>
                 </button>

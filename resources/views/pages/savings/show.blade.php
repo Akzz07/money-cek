@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="flex items-center justify-between text-xs pt-1">
-                    <span class="font-extrabold text-blue-600">{{ $progress->percentage }}% Tercapai</span>
+                    <span class="font-extrabold text-sky-600">{{ $progress->percentage }}% Tercapai</span>
                     @if($progress->surplusAmount)
                         <span class="font-bold text-emerald-600">Surplus: +@money($progress->surplusAmount)</span>
                     @else

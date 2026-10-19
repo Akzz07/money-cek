@@ -86,8 +86,8 @@
             <div class="pt-3">
                 <button type="submit" 
                         :disabled="submitting" 
-                        :class="submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-blue-700 active:scale-95 shadow-blue-500/25'" 
-                        class="w-full py-4 text-base font-bold bg-blue-600 text-white rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
+                        :class="submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-sky-700 active:scale-95 shadow-sky-500/25'" 
+                        class="w-full py-4 text-base font-bold bg-sky-600 text-white rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
                     <span x-show="!submitting">Perbarui Tagihan</span>
                     <span x-show="submitting" x-cloak class="flex items-center gap-2">
                         <svg class="animate-spin w-5 h-5 text-white" fill="none" viewBox="0 0 24 24">

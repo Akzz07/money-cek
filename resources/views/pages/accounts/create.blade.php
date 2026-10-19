@@ -113,7 +113,7 @@
                            name="include_in_safe_to_spend" 
                            value="1" 
                            x-model="includeInSafeToSpend" 
-                           class="mt-0.5 rounded-md border-slate-300 text-blue-600 focus:ring-blue-500">
+                           class="mt-0.5 rounded-md border-slate-300 text-sky-600 focus:ring-sky-500">
                     <div class="text-xs">
                         <span class="font-bold text-slate-800 block">Hitung dalam Safe-to-Spend</span>
                         <span class="text-slate-400 leading-relaxed block mt-0.5">Saldo di akun ini dianggap siap dibelanjakan untuk kebutuhan operasional harian.</span>
@@ -126,7 +126,7 @@
                            name="include_in_total_assets" 
                            value="1" 
                            {{ old('include_in_total_assets', '1') ? 'checked' : '' }} 
-                           class="mt-0.5 rounded-md border-slate-300 text-blue-600 focus:ring-blue-500">
+                           class="mt-0.5 rounded-md border-slate-300 text-sky-600 focus:ring-sky-500">
                     <div class="text-xs">
                         <span class="font-bold text-slate-800 block">Sertakan dalam Total Kekayaan Bersih</span>
                         <span class="text-slate-400 leading-relaxed block mt-0.5">Menambah angka total aset pada ringkasan dashboard dan halaman aset.</span>
@@ -141,7 +141,7 @@
                           name="notes" 
                           rows="2" 
                           placeholder="Keterangan tambahan akun ini..." 
-                          class="w-full p-3 text-xs sm:text-sm text-slate-800 bg-white border border-slate-200/90 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs resize-none placeholder-slate-300">{{ old('notes') }}</textarea>
+                          class="w-full p-3 text-xs sm:text-sm text-slate-800 bg-white border border-slate-200/90 rounded-2xl focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs resize-none placeholder-slate-300">{{ old('notes') }}</textarea>
             </div>
 
             <!-- Submit Button -->

@@ -11,7 +11,7 @@
 
         <!-- Planning Sub-Navigation (Anggaran / Tagihan / Tabungan) -->
         <div class="flex items-center bg-slate-100/90 p-1 rounded-2xl mb-4 text-xs font-semibold">
-            <a href="{{ route('budgets.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-blue-600 shadow-xs font-bold transition-all">
+            <a href="{{ route('budgets.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-sky-600 shadow-xs font-bold transition-all">
                 Anggaran
             </a>
             <a href="{{ route('bills.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-500 hover:text-slate-800 transition-colors">
@@ -53,7 +53,7 @@
             <div class="flex items-center gap-2">
                 <span class="font-bold text-slate-800">{{ $overview->periodName }}</span>
                 @if($isNotCurrent)
-                    <a href="{{ route('budgets.index') }}" class="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold hover:bg-blue-200 transition-colors">
+                    <a href="{{ route('budgets.index') }}" class="text-[10px] bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full font-semibold hover:bg-sky-200 transition-colors">
                         Bulan Ini
                     </a>
                 @endif
@@ -77,7 +77,7 @@
 
             <!-- Overall Progress Bar -->
             <div class="w-full bg-slate-100 rounded-full h-2.5 mb-4 overflow-hidden">
-                <div class="h-2.5 rounded-full transition-all duration-500 {{ $overview->overallPercentage > 100 ? 'bg-rose-500' : ($overview->overallPercentage >= 80 ? 'bg-amber-500' : 'bg-blue-600') }}" 
+                <div class="h-2.5 rounded-full transition-all duration-500 {{ $overview->overallPercentage > 100 ? 'bg-rose-500' : ($overview->overallPercentage >= 80 ? 'bg-amber-500' : 'bg-sky-600') }}" 
                      style="width: {{ min($overview->overallPercentage, 100) }}%"></div>
             </div>
 
@@ -160,7 +160,7 @@
                                 </div>
 
                                 <div class="flex items-center gap-2">
-                                    <a href="{{ route('budgets.edit', $usage->budget) }}" class="text-blue-600 hover:text-blue-700 font-semibold">
+                                    <a href="{{ route('budgets.edit', $usage->budget) }}" class="text-sky-600 hover:text-sky-700 font-semibold">
                                         Ubah
                                     </a>
                                     <span class="text-slate-300">•</span>
