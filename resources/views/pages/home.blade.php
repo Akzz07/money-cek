@@ -9,23 +9,36 @@
                 <x-ui.cat-mascot :balance="$metrics->totalBalance" />
 
                 @php
+                    $hour = now()->setTimezone(Auth::user()->timezone ?? 'Asia/Jakarta')->hour;
+                    $waktu = match (true) {
+                        $hour >= 4 && $hour < 11 => 'Pagi',
+                        $hour >= 11 && $hour < 15 => 'Siang',
+                        $hour >= 15 && $hour < 18 => 'Sore',
+                        default => 'Malam',
+                    };
+
                     $balVal = (float) $metrics->totalBalance->toDecimalString();
+
+                    if ($balVal < 100000) {
+                        $tierName = 'Mode Survival';
+                        $tierColor = 'text-rose-600 dark:text-rose-400';
+                    } elseif ($balVal <= 500000) {
+                        $tierName = 'Miskin';
+                        $tierColor = 'text-orange-600 dark:text-orange-400';
+                    } elseif ($balVal <= 1000000) {
+                        $tierName = 'Pejuang';
+                        $tierColor = 'text-amber-600 dark:text-amber-400';
+                    } elseif ($balVal <= 10000000) {
+                        $tierName = 'Perintis';
+                        $tierColor = 'text-blue-600 dark:text-blue-400';
+                    } else {
+                        $tierName = 'Sultan';
+                        $tierColor = 'text-emerald-600 dark:text-emerald-400';
+                    }
                 @endphp
                 <div class="min-w-0">
-                    <p class="text-xs sm:text-sm font-semibold truncate flex items-center gap-1">
-                        @if($balVal < 500000)
-                            <span class="text-rose-600 dark:text-rose-400">
-                                🩹 Saldo kritis, kucing butuh istirahat!
-                            </span>
-                        @elseif($balVal < 1500000)
-                            <span class="text-amber-600 dark:text-amber-400">
-                                🐟 Saldo menipis, beri asupan kucingmu!
-                            </span>
-                        @else
-                            <span class="text-emerald-600 dark:text-emerald-400">
-                                ✨ Kucing gemoy & sehat, keuanganmu prima!
-                            </span>
-                        @endif
+                    <p class="text-xs sm:text-sm font-bold tracking-tight text-slate-800 dark:text-slate-100 truncate">
+                        Selamat {{ $waktu }}, <span class="{{ $tierColor }} font-black">{{ $tierName }}</span>
                     </p>
                 </div>
             </div>

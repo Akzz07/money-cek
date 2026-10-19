@@ -10,33 +10,53 @@
         $amount = (float) $balance;
     }
 
-    if ($amount < 500000) {
+    if ($amount < 100000) {
         $state = 'sick';
-        $label = 'Kucing Sakit';
-        $tagline = 'Saldo Kritis (< Rp 500rb)';
-        $dialogTitle = 'Aduh... Kucingmu Meriang 🩹';
-        $dialogMessage = 'Saldomu saat ini di bawah Rp 500.000. Kucingmu lemas kedinginan. Tahan dulu belanja konsumtif dan amankan kebutuhan pokok ya!';
-        $dialogTip = 'Prioritaskan pelunasan tagihan terdekat dan batasi pengeluaran harian.';
+        $label = 'Mode Survival';
+        $tagline = 'Status: Mode Survival (< Rp 100rb)';
+        $dialogTitle = 'Aduh... Mode Survival Aktif! 🩹';
+        $dialogMessage = 'Saldomu di bawah Rp 100.000! Kucingmu lemas kedinginan. Prioritaskan kebutuhan pokok paling mendesak dan tahan semua jajan!';
+        $dialogTip = 'Gunakan sisa saldo hanya untuk makan & kebutuhan darurat primer.';
         $glowColor = 'from-rose-500/20 to-rose-500/5';
         $badgeClass = 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800';
         $animClass = 'animate-cat-shiver';
-    } elseif ($amount < 1500000) {
+    } elseif ($amount <= 500000) {
+        $state = 'sick';
+        $label = 'Miskin';
+        $tagline = 'Status: Miskin (Rp 100rb - 500rb)';
+        $dialogTitle = 'Meong Meriang... Dompet Tipis 🩹';
+        $dialogMessage = 'Saldomu di kisaran Rp 100.000 s/d Rp 500.000. Kucingmu meriang demam. Rem dulu pengeluaran tidak penting ya!';
+        $dialogTip = 'Prioritaskan pelunasan tagihan terdekat dan batasi pengeluaran harian.';
+        $glowColor = 'from-orange-500/20 to-orange-500/5';
+        $badgeClass = 'bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-950/60 dark:text-orange-300 dark:border-orange-800';
+        $animClass = 'animate-cat-shiver';
+    } elseif ($amount <= 1000000) {
         $state = 'hungry';
-        $label = 'Kucing Lapar';
-        $tagline = 'Saldo Menipis (< Rp 1.5jt)';
-        $dialogTitle = 'Kruyuukk... Kucing Mulai Lapar 🐟';
-        $dialogMessage = 'Saldomu di kisaran Rp 500.000 s/d Rp 1.500.000. Kucingmu mulai mengeong minta ikan segar. Yuk tambah asupan saldo dan terus menabung!';
+        $label = 'Pejuang';
+        $tagline = 'Status: Pejuang (Rp 500rb - 1jt)';
+        $dialogTitle = 'Kruyuukk... Semangat Pejuang! 🐟';
+        $dialogMessage = 'Saldomu di kisaran Rp 500.000 s/d Rp 1.000.000. Kucingmu mulai mengeong minta ikan segar. Terus berjuang dan tambah tabunganmu!';
         $dialogTip = 'Sisihkan minimal 10% dari sisa saldo ke Pos Tabungan Impian.';
         $glowColor = 'from-amber-500/20 to-amber-500/5';
         $badgeClass = 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800';
         $animClass = 'animate-cat-tail';
+    } elseif ($amount <= 10000000) {
+        $state = 'hungry';
+        $label = 'Perintis';
+        $tagline = 'Status: Perintis (Rp 1jt - 10jt)';
+        $dialogTitle = 'Ngeong! Langkah Perintis Finansial! 🚀';
+        $dialogMessage = 'Saldomu mencapai jutaan rupiah (Rp 1jt - 10jt)! Kucingmu berenergi dan siap menemani langkah perintis investasimu!';
+        $dialogTip = 'Disiplin anggaran dan alokasikan ke tujuan finansial jangka panjang.';
+        $glowColor = 'from-blue-500/20 to-blue-500/5';
+        $badgeClass = 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800';
+        $animClass = 'animate-cat-bounce';
     } else {
         $state = 'healthy';
-        $label = 'Kucing Sehat & Gemoy';
-        $tagline = 'Finansial Makmur (≥ Rp 1.5jt)';
-        $dialogTitle = 'Purrr-fect! Kucing Sehat & Makmur ✨';
-        $dialogMessage = 'Luar biasa! Saldomu di atas Rp 1.500.000. Kucingmu gemoy, berenergi, dan sangat bahagia. Pertahankan stabilitas arus kas keuanganmu!';
-        $dialogTip = 'Pertahankan disiplin anggaran dan optimalkan aset produktifmu.';
+        $label = 'Sultan';
+        $tagline = 'Status: Sultan (> Rp 10jt)';
+        $dialogTitle = 'Purrr-fect! Meong Sultan Makmur 👑✨';
+        $dialogMessage = 'Ampun Sultan! Saldomu melimpah di atas Rp 10.000.000! Kucingmu gemoy, royal, dan sangat bahagia. Pertahankan aset dan investasimu!';
+        $dialogTip = 'Optimalkan aset produktif dan diversifikasi instrumen investasi.';
         $glowColor = 'from-emerald-500/20 to-emerald-500/5';
         $badgeClass = 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800';
         $animClass = 'animate-cat-bounce';
