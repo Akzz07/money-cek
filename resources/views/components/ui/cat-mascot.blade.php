@@ -112,7 +112,7 @@
             title="Klik untuk cek kondisi kucing keuanganmu">
         
         <!-- Animated Cat Character SVG Container -->
-        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center bg-gradient-to-br {{ $glowColor }} border border-black/5 dark:border-white/10 shadow-xs group-hover:shadow-md transition-all">
+        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center bg-white/80 dark:bg-slate-800/80 backdrop-blur-md bg-gradient-to-br {{ $glowColor }} border border-white/60 dark:border-white/10 shadow-xs group-hover:shadow-md transition-all">
             
             @if($state === 'sick')
                 <!-- KUCING SAKIT (Shivering, Icepack / Bandage, Sad eyes) -->

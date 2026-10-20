@@ -36,7 +36,7 @@
                         $tierColor = 'text-emerald-600 dark:text-emerald-400';
                     }
                 @endphp
-                <div class="min-w-0">
+                <div class="min-w-0 bg-white/70 dark:bg-slate-900/60 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs">
                     <p class="text-xs sm:text-sm font-bold tracking-tight text-slate-800 dark:text-slate-100 truncate">
                         Selamat {{ $waktu }}, <span class="{{ $tierColor }} font-black">{{ $tierName }}</span>
                     </p>
@@ -50,7 +50,7 @@
 
                 <!-- Profile Avatar -->
                 <a href="{{ route('profile.edit') }}" 
-                   class="w-10 h-10 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-xs flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-95 transition-all" 
+                   class="w-10 h-10 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/60 dark:border-slate-700/80 shadow-xs flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 active:scale-95 transition-all" 
                    aria-label="Profil Pengguna">
                     <span class="text-xs font-black text-sky-600 dark:text-sky-400 uppercase">{{ mb_substr(Auth::user()->name, 0, 2) }}</span>
                 </a>

@@ -14,7 +14,7 @@
 }" class="relative inline-flex items-center">
     <button type="button"
             @click="toggleTheme()"
-            class="w-10 h-10 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-xs flex items-center justify-center text-slate-600 dark:text-amber-400 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-90 transition-all focus:outline-none"
+            class="w-10 h-10 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/60 dark:border-slate-700/80 shadow-xs flex items-center justify-center text-slate-600 dark:text-amber-400 hover:bg-white dark:hover:bg-slate-700 active:scale-90 transition-all focus:outline-none"
             :title="isDark ? 'Ganti ke Mode Terang' : 'Ganti ke Mode Gelap'"
             aria-label="Toggle Mode Gelap / Terang">
         
