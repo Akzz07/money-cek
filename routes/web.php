@@ -13,6 +13,7 @@ use App\Http\Controllers\SafeToSpendController;
 use App\Http\Controllers\SavingsGoalController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionExportController;
+use App\Http\Controllers\VoiceCommandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes - Monetra Mobile-First Financial App
@@ -23,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
+
+    // Voice Command Parsing
+    Route::post('/voice/parse', [VoiceCommandController::class, 'parse'])->name('voice.parse')->middleware('throttle:30,1');
 
     // Alias dashboard to home for standard Laravel auth redirects
     Route::get('/dashboard', function () {

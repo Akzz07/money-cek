@@ -21,13 +21,27 @@
             <span class="text-[11px] leading-tight">Aktivitas</span>
         </a>
 
-        <!-- Center Floating Action Button: Tambah Transaksi -->
+        <!-- Center Floating Action Button: Tambah Transaksi & Voice Command -->
         <div class="relative -top-5 flex flex-col items-center">
-            <a href="{{ route('transactions.create') }}" class="w-13 h-13 rounded-full bg-gradient-to-tr from-[#0284C7] via-[#0EA5E9] to-[#38BDF8] text-white shadow-lg shadow-sky-500/35 dark:shadow-sky-500/25 flex items-center justify-center active:scale-95 transition-all hover:shadow-xl hover:shadow-sky-500/40 focus:outline-none focus:ring-4 focus:ring-sky-300 dark:focus:ring-sky-800" aria-label="Tambah Transaksi">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                </svg>
-            </a>
+            <div class="relative flex items-center justify-center">
+                <!-- Voice Command Mini Trigger Badge -->
+                <button type="button" 
+                        @click="$dispatch('open-voice-modal')" 
+                        class="absolute -top-1.5 -right-2 w-7 h-7 rounded-full bg-gradient-to-tr from-indigo-600 to-sky-500 text-white shadow-md border-2 border-white dark:border-slate-900 flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-10" 
+                        title="Catat Cepat dengan Suara"
+                        aria-label="Catat Cepat dengan Suara">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                    </svg>
+                </button>
+
+                <!-- Primary Manual Add FAB -->
+                <a href="{{ route('transactions.create') }}" class="w-13 h-13 rounded-full bg-gradient-to-tr from-[#0284C7] via-[#0EA5E9] to-[#38BDF8] text-white shadow-lg shadow-sky-500/35 dark:shadow-sky-500/25 flex items-center justify-center active:scale-95 transition-all hover:shadow-xl hover:shadow-sky-500/40 focus:outline-none focus:ring-4 focus:ring-sky-300 dark:focus:ring-sky-800" aria-label="Tambah Transaksi">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                    </svg>
+                </a>
+            </div>
         </div>
 
         <!-- Tab 4: Anggaran -->

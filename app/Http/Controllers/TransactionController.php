@@ -15,6 +15,7 @@ use App\Http\Requests\VoidTransactionRequest;
 use App\Models\Category;
 use App\Models\Transaction;
 use App\Services\Transactions\TransactionQueryService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -44,9 +45,18 @@ final class TransactionController extends Controller
         return view('pages.transactions.create', compact('accounts', 'expenseCategories', 'incomeCategories'));
     }
 
-    public function store(StoreTransactionRequest $request, PostTransaction $action): RedirectResponse
+    public function store(StoreTransactionRequest $request, PostTransaction $action): RedirectResponse|JsonResponse
     {
-        $action->handle($request->user(), $request->toTransactionData());
+        $transaction = $action->handle($request->user(), $request->toTransactionData());
+
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Transaksi berhasil dicatat!',
+                'redirect_url' => route('transactions.index'),
+                'transaction_id' => $transaction->id,
+            ]);
+        }
 
         return redirect()->route('transactions.index')->with('success', 'Transaksi berhasil dicatat!');
     }

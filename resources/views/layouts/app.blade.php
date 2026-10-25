@@ -41,6 +41,9 @@
 
             <!-- Bottom Navigation Bar -->
             <x-ui.bottom-nav :active="$activeNav ?? 'home'" />
+
+            <!-- Global Voice Command Assistant Modal -->
+            <x-ui.voice-modal />
         </div>
     </body>
 </html>

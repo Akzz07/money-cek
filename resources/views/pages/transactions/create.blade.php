@@ -1,20 +1,40 @@
 <x-app-layout :activeNav="'activity'">
     <div class="px-5 pt-6 pb-8" x-data="{ 
-        tab: '{{ old('type', 'expense') }}',
-        selectedCategory: '{{ old('category_id') }}',
-        amount: '{{ old('amount') }}',
+        tab: '{{ old('type', request('type', 'expense')) }}',
+        selectedCategory: '{{ old('category_id', request('category_id', '')) }}',
+        amount: '{{ old('amount', request('amount', '')) }}',
         submitting: false
     }">
         <!-- Top Navigation Bar -->
-        <div class="flex items-center justify-between mb-6">
-            <a href="{{ route('home') }}" class="w-9 h-9 rounded-full bg-white border border-slate-200/80 shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors" aria-label="Kembali">
+        <div class="flex items-center justify-between mb-4">
+            <a href="{{ route('home') }}" class="w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-xs flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 transition-colors" aria-label="Kembali">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
                 </svg>
             </a>
-            <h1 class="text-base font-bold text-slate-800">Catat Transaksi</h1>
+            <h1 class="text-base font-bold text-slate-800 dark:text-slate-100">Catat Transaksi</h1>
             <div class="w-9"></div>
         </div>
+
+        <!-- Voice Command Quick Banner -->
+        <button type="button" 
+                @click="$dispatch('open-voice-modal')" 
+                class="w-full mb-5 p-3 rounded-2xl bg-gradient-to-r from-sky-500/10 via-indigo-500/10 to-sky-500/5 dark:from-sky-950/40 dark:via-indigo-950/40 dark:to-sky-950/20 border border-sky-300/50 dark:border-sky-800/60 flex items-center justify-between group hover:border-sky-400 active:scale-98 transition-all shadow-2xs">
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform shrink-0">
+                    <svg class="w-4.5 h-4.5 animate-pulse" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                    </svg>
+                </div>
+                <div class="text-left min-w-0">
+                    <p class="text-xs font-bold text-sky-950 dark:text-sky-200 truncate">Catat Cepat dengan Suara (AI)</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate">Contoh: "Beli kopi 25rb pakai BCA"</p>
+                </div>
+            </div>
+            <span class="text-[11px] font-bold text-sky-600 dark:text-sky-400 bg-white/90 dark:bg-slate-800 px-2.5 py-1 rounded-xl border border-sky-200/80 dark:border-sky-800/80 shadow-2xs shrink-0">
+                Bicara 🎤
+            </span>
+        </button>
 
         @if(session('error'))
             <div class="mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-sm font-medium rounded-2xl">
@@ -66,7 +86,7 @@
                     name="amount" 
                     id="amount"
                     label="Nominal Transaksi" 
-                    :value="old('amount')" 
+                    :value="old('amount', request('amount'))" 
                     placeholder="0" 
                     :required="true"
                     :showPresets="true" />
@@ -79,9 +99,9 @@
                             name="source_account_id" 
                             required
                             class="w-full px-4 py-3 bg-white border @error('source_account_id') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs">
-                        <option value="" disabled {{ old('source_account_id') ? '' : 'selected' }}>Pilih Akun</option>
+                        <option value="" disabled {{ old('source_account_id', request('source_account_id')) ? '' : 'selected' }}>Pilih Akun</option>
                         @foreach($accounts as $account)
-                            <option value="{{ $account->id }}" {{ (string) old('source_account_id') === (string) $account->id ? 'selected' : '' }}>
+                            <option value="{{ $account->id }}" {{ (string) old('source_account_id', request('source_account_id')) === (string) $account->id ? 'selected' : '' }}>
                                 {{ $account->name }} ({{ $account->type->label() }})
                             </option>
                         @endforeach
@@ -149,7 +169,7 @@
                     <input type="date" 
                            id="transaction_date" 
                            name="transaction_date" 
-                           value="{{ old('transaction_date', date('Y-m-d')) }}" 
+                           value="{{ old('transaction_date', request('transaction_date', date('Y-m-d'))) }}" 
                            required 
                            class="w-full px-4 py-3 bg-white border @error('transaction_date') border-rose-500 @else border-slate-200/90 @enderror rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs">
                     @error('transaction_date')
@@ -163,7 +183,7 @@
                     <input type="text" 
                            id="description" 
                            name="description" 
-                           value="{{ old('description') }}" 
+                           value="{{ old('description', request('description')) }}" 
                            placeholder="Contoh: Makan siang nasi padang" 
                            class="w-full px-4 py-3 bg-white border border-slate-200/90 rounded-2xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all shadow-xs placeholder-slate-300">
                 </div>
