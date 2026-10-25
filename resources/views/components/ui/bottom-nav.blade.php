@@ -1,8 +1,13 @@
 @props([
     'active' => 'home', // home, activity, budget, asset
+    'balance' => null,
 ])
 
 <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-800 px-2 py-1.5 z-40 safe-bottom shadow-[0_-4px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_-4px_25px_rgba(0,0,0,0.4)] transition-colors duration-200" aria-label="Navigasi Utama">
+    
+    <!-- Dynamic Animated Walking Mascot on Top of Navbar Track -->
+    <x-ui.navbar-mascot :balance="$balance" />
+
     <div class="flex items-center justify-around relative">
         
         <!-- Tab 1: Beranda -->

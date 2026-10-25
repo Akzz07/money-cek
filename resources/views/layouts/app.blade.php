@@ -1,3 +1,7 @@
+@props([
+    'activeNav' => 'home',
+    'balance' => null,
+])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -40,7 +44,7 @@
             </main>
 
             <!-- Bottom Navigation Bar -->
-            <x-ui.bottom-nav :active="$activeNav ?? 'home'" />
+            <x-ui.bottom-nav :active="$activeNav ?? 'home'" :balance="$balance ?? null" />
 
             <!-- Global Voice Command Assistant Modal -->
             <x-ui.voice-modal />

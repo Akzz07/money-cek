@@ -1,4 +1,4 @@
-<x-app-layout :activeNav="'home'">
+<x-app-layout :activeNav="'home'" :balance="$metrics->totalBalance">
     <div class="px-5 pt-6 pb-6">
         <h1 class="sr-only">Dashboard Keuangan Monetra</h1>
 
