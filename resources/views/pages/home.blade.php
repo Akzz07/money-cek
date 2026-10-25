@@ -23,10 +23,10 @@
                         $tierName = 'Mode Survival';
                         $tierColor = 'text-rose-600 dark:text-rose-400';
                     } elseif ($balVal <= 500000) {
-                        $tierName = 'Miskin';
+                        $tierName = 'Pejuang';
                         $tierColor = 'text-orange-600 dark:text-orange-400';
                     } elseif ($balVal <= 1000000) {
-                        $tierName = 'Pejuang';
+                        $tierName = 'Petualang';
                         $tierColor = 'text-amber-600 dark:text-amber-400';
                     } elseif ($balVal <= 10000000) {
                         $tierName = 'Perintis';
