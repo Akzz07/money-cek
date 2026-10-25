@@ -21,9 +21,13 @@
 
         <!-- User Summary Card -->
         <div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700/80 shadow-xs flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white flex items-center justify-center font-black text-xl shadow-md shadow-sky-500/20 shrink-0 uppercase">
-                {{ mb_substr(Auth::user()->name, 0, 2) }}
-            </div>
+            @if(Auth::user()->avatar)
+                <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" class="w-14 h-14 rounded-2xl object-cover shadow-md shadow-sky-500/20 shrink-0 border border-white/60">
+            @else
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white flex items-center justify-center font-black text-xl shadow-md shadow-sky-500/20 shrink-0 uppercase">
+                    {{ mb_substr(Auth::user()->name, 0, 2) }}
+                </div>
+            @endif
             <div class="min-w-0 flex-1">
                 <h2 class="text-base font-bold text-slate-800 dark:text-slate-100 truncate">{{ Auth::user()->name }}</h2>
                 <p class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">{{ Auth::user()->email }}</p>

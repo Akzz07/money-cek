@@ -15,6 +15,8 @@ use Illuminate\Notifications\Notifiable;
 #[Fillable([
     'name',
     'email',
+    'google_id',
+    'avatar',
     'is_admin',
     'password',
     'timezone',

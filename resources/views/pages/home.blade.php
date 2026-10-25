@@ -50,9 +50,13 @@
 
                 <!-- Profile Avatar -->
                 <a href="{{ route('profile.edit') }}" 
-                   class="w-10 h-10 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/60 dark:border-slate-700/80 shadow-xs flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 active:scale-95 transition-all" 
+                   class="w-10 h-10 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/60 dark:border-slate-700/80 shadow-xs flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 active:scale-95 transition-all overflow-hidden" 
                    aria-label="Profil Pengguna">
-                    <span class="text-xs font-black text-sky-600 dark:text-sky-400 uppercase">{{ mb_substr(Auth::user()->name, 0, 2) }}</span>
+                    @if(Auth::user()->avatar)
+                        <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" class="w-full h-full object-cover">
+                    @else
+                        <span class="text-xs font-black text-sky-600 dark:text-sky-400 uppercase">{{ mb_substr(Auth::user()->name, 0, 2) }}</span>
+                    @endif
                 </a>
             </div>
         </div>
