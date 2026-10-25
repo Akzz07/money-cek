@@ -61,43 +61,13 @@
             </div>
         </div>
 
-        <!-- Month Navigation Bar -->
-        @php
-            $prevMonth = $metrics->startDate->subMonthNoOverflow()->format('Y-m');
-            $nextMonth = $metrics->startDate->addMonthNoOverflow()->format('Y-m');
-            $currentMonthKey = now()->setTimezone(Auth::user()->timezone ?? 'Asia/Jakarta')->format('Y-m');
-            $isNotCurrent = $metrics->periodKey !== $currentMonthKey;
-        @endphp
-        <div class="flex items-center justify-between bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-1.5 mb-4 text-xs border border-sky-100/80 dark:border-slate-700/80 shadow-2xs transition-colors">
-            <a href="{{ route('home', ['month' => $prevMonth]) }}" 
-               class="p-1.5 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-slate-700 hover:text-sky-600 dark:hover:text-sky-400 hover:shadow-xs transition-all" 
-               aria-label="Bulan Sebelumnya">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-            </a>
-
-            <div class="flex items-center gap-2">
-                <span class="font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">{{ $metrics->periodName }}</span>
-                @if($isNotCurrent)
-                    <a href="{{ route('home') }}" class="text-[10px] bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200/50 dark:border-sky-800/50 px-2 py-0.5 rounded-full font-bold hover:bg-sky-100 dark:hover:bg-sky-900 transition-colors">
-                        Bulan Ini
-                    </a>
-                @endif
-            </div>
-
-            <a href="{{ route('home', ['month' => $nextMonth]) }}" 
-               class="p-1.5 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-sky-50 dark:hover:bg-slate-700 hover:text-sky-600 dark:hover:text-sky-400 hover:shadow-xs transition-all" 
-               aria-label="Bulan Berikutnya">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-
         <!-- Total Saldo Card (Variant 5 — Blue Sky Fresh Hero Card) -->
         <div x-data="{ showBalance: true }" class="bg-gradient-to-br from-[#1E88E5] via-[#0284C7] to-[#38BDF8] rounded-3xl p-5 text-white shadow-xl shadow-sky-500/25 dark:shadow-sky-950/50 border border-white/20 mb-5 relative overflow-hidden ring-1 ring-inset ring-white/20">
             <!-- Subtle ambient card highlight -->
             <div class="absolute inset-0 bg-gradient-to-tr from-white/[0.12] via-transparent to-white/[0.05] pointer-events-none"></div>
 
             <div class="relative flex items-center justify-between text-white/85 text-xs font-semibold mb-2">
-                <span class="tracking-wider uppercase text-[11px] font-bold text-white/90">Total Saldo Terkonsolidasi</span>
+                <span class="tracking-wider uppercase text-[11px] font-bold text-white/90">Total Saldo • {{ $metrics->periodName }}</span>
                 <button @click="showBalance = !showBalance" class="text-white hover:text-white transition-colors flex items-center gap-1.5 text-xs font-medium py-1 px-2.5 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/25 active:scale-95" aria-label="Toggle Sembunyikan Saldo">
                     <svg x-show="showBalance" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                     <svg x-show="!showBalance" x-cloak class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"/></svg>
