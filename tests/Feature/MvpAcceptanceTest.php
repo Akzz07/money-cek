@@ -216,15 +216,7 @@ final class MvpAcceptanceTest extends TestCase
         $csvResponse->assertOk();
         $this->assertStringContainsString('text/csv', (string) $csvResponse->headers->get('content-type'));
 
-        // 13. Admin Panel Protected Access
-        $this->get('/admin')->assertOk();
-        $this->get('/admin/transactions')->assertOk();
-        $this->get('/admin/accounts')->assertOk();
-        $this->get('/admin/categories')->assertOk();
-        $this->get('/admin/audit-logs')->assertOk();
-
-        // Unauthorized user blocked from admin
-        $stranger = User::factory()->create(['is_admin' => false]);
-        $this->actingAs($stranger)->get('/admin')->assertForbidden();
+        // 13. Admin Panel Disabled (Personal Application)
+        $this->get('/admin')->assertNotFound();
     }
 }
