@@ -2,7 +2,7 @@
     <div class="px-5 pt-6 pb-6">
         <!-- Header & Action -->
         <div class="flex items-center justify-between mb-3">
-            <h1 class="text-xl font-bold text-slate-800">Anggaran Bulanan</h1>
+            <h1 class="text-xl font-extrabold text-white tracking-tight drop-shadow-xs">Anggaran Bulanan</h1>
             <x-ui.button :href="route('budgets.create', ['period' => $overview->periodKey])" size="sm" class="flex items-center gap-1 shadow-xs">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                 <span>Buat</span>
@@ -10,14 +10,14 @@
         </div>
 
         <!-- Planning Sub-Navigation (Anggaran / Tagihan / Tabungan) -->
-        <div class="flex items-center bg-slate-100/90 p-1 rounded-2xl mb-4 text-xs font-semibold">
-            <a href="{{ route('budgets.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white text-sky-600 shadow-xs font-bold transition-all">
+        <div class="flex items-center bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/60 dark:border-slate-700/80 p-1 rounded-2xl mb-4 text-xs font-semibold shadow-2xs">
+            <a href="{{ route('budgets.index') }}" class="flex-1 py-1.5 text-center rounded-xl bg-white dark:bg-slate-700 text-sky-600 dark:text-sky-400 shadow-xs font-bold transition-all">
                 Anggaran
             </a>
-            <a href="{{ route('bills.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-500 hover:text-slate-800 transition-colors">
+            <a href="{{ route('bills.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-colors">
                 Tagihan
             </a>
-            <a href="{{ route('savings-goals.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-500 hover:text-slate-800 transition-colors">
+            <a href="{{ route('savings-goals.index') }}" class="flex-1 py-1.5 text-center rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-colors">
                 Tabungan
             </a>
         </div>

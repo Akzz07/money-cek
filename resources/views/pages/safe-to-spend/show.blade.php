@@ -4,12 +4,12 @@
         <!-- Top Header Navigation -->
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <a href="{{ route('home') }}" class="w-9 h-9 rounded-full bg-white border border-slate-200/80 shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors" aria-label="Kembali ke Beranda">
+                <a href="{{ route('home') }}" class="w-9 h-9 rounded-full bg-white/90 border border-white/60 shadow-xs flex items-center justify-center text-slate-700 hover:bg-white backdrop-blur-sm transition-colors" aria-label="Kembali ke Beranda">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                 </a>
-                <h1 class="text-xl font-bold text-slate-800">Kalkulasi Safe-to-Spend</h1>
+                <h1 class="text-xl font-extrabold text-white tracking-tight drop-shadow-xs">Kalkulasi Safe-to-Spend</h1>
             </div>
-            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">
+            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-white/90 text-sky-800 border border-white/60 shadow-xs backdrop-blur-xs">
                 Formula Transparan
             </span>
         </div>

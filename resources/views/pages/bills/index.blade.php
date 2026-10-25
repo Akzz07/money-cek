@@ -14,7 +14,7 @@
 
         <!-- Top Header & Action -->
         <div class="flex items-center justify-between mb-3">
-            <h1 class="text-xl font-bold text-slate-800">Tagihan & Kewajiban</h1>
+            <h1 class="text-xl font-extrabold text-white tracking-tight drop-shadow-xs">Tagihan & Kewajiban</h1>
             
             <x-ui.button :href="route('bills.create')" size="sm" class="flex items-center gap-1 shadow-xs">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>

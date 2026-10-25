@@ -17,9 +17,9 @@
 
         <!-- Title Header -->
         <div class="flex items-center justify-between mb-4">
-            <h1 class="text-xl font-bold text-slate-800">Riwayat Transaksi</h1>
+            <h1 class="text-xl font-extrabold text-white tracking-tight drop-shadow-xs">Riwayat Transaksi</h1>
             <div class="flex items-center gap-1.5">
-                <a href="{{ route('transactions.export', request()->query()) }}" class="p-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-xl transition-colors border border-slate-200/80 shadow-2xs flex items-center gap-1 text-xs font-semibold" title="Ekspor CSV">
+                <a href="{{ route('transactions.export', request()->query()) }}" class="p-2 bg-white/90 hover:bg-white text-slate-700 rounded-xl transition-colors border border-white/60 shadow-2xs flex items-center gap-1 text-xs font-semibold backdrop-blur-sm" title="Ekspor CSV">
                     <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                     <span>CSV</span>
                 </a>

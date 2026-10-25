@@ -4,74 +4,79 @@
         <!-- Top Header Navigation -->
         <div class="flex items-center justify-between">
             <div>
-                <h1 class="text-xl font-bold text-slate-800">Aset & Laporan</h1>
-                <p class="text-xs text-slate-400 mt-0.5">{{ $overview->periodLabel }}</p>
+                <h1 class="text-xl font-extrabold text-white tracking-tight drop-shadow-xs">Aset & Laporan</h1>
+                <div class="mt-1">
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 dark:bg-white/90 text-sky-800 dark:text-sky-900 shadow-xs border border-white/80 backdrop-blur-xs">
+                        <svg class="w-3.5 h-3.5 me-1 text-sky-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        {{ $overview->periodLabel }}
+                    </span>
+                </div>
             </div>
             
-            <a href="{{ route('accounts.index') }}" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition-colors flex items-center gap-1 shadow-2xs">
+            <a href="{{ route('accounts.index') }}" class="px-3 py-1.5 bg-white/90 hover:bg-white text-slate-700 text-xs font-semibold rounded-xl transition-colors flex items-center gap-1 shadow-2xs border border-white/60 backdrop-blur-sm">
                 <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
                 <span>Kelola Akun</span>
             </a>
         </div>
 
         <!-- Period Selection Tabs -->
-        <div class="flex items-center bg-slate-100/90 p-1 rounded-2xl text-xs font-semibold overflow-x-auto no-scrollbar">
+        <div class="flex items-center bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/60 dark:border-slate-700/80 p-1 rounded-2xl text-xs font-semibold overflow-x-auto no-scrollbar shadow-2xs">
             <a href="{{ route('assets.index', ['period' => 'this_month']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_month' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_month' ? 'bg-white dark:bg-slate-700 text-sky-600 dark:text-sky-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">
                 Bulan Ini
             </a>
             <a href="{{ route('assets.index', ['period' => 'last_month']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_month' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_month' ? 'bg-white dark:bg-slate-700 text-sky-600 dark:text-sky-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">
                 Bulan Lalu
             </a>
             <a href="{{ route('assets.index', ['period' => 'last_3_months']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_3_months' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'last_3_months' ? 'bg-white dark:bg-slate-700 text-sky-600 dark:text-sky-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">
                 3 Bulan
             </a>
             <a href="{{ route('assets.index', ['period' => 'this_year']) }}" 
-               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_year' ? 'bg-white text-sky-600 shadow-xs font-bold' : 'text-slate-500 hover:text-slate-800' }}">
+               class="flex-1 py-1.5 px-2.5 text-center rounded-xl whitespace-nowrap transition-all {{ $overview->periodKey === 'this_year' ? 'bg-white dark:bg-slate-700 text-sky-600 dark:text-sky-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">
                 Tahun Ini
             </a>
         </div>
 
-        <!-- Ringkasan Kekayaan Bersih (Net Worth Hero Card) -->
-        <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 rounded-3xl p-5 text-white shadow-xl shadow-slate-900/15 relative overflow-hidden">
-            <!-- Decorative blur shape -->
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-sky-500/10 rounded-full blur-xl pointer-events-none"></div>
+        <!-- Ringkasan Kekayaan Bersih (Variant 5 Blue Sky Hero Card) -->
+        <div class="bg-gradient-to-br from-[#1E88E5] via-[#0284C7] to-[#38BDF8] rounded-3xl p-5 text-white shadow-xl shadow-sky-500/25 dark:shadow-sky-950/50 border border-white/20 relative overflow-hidden ring-1 ring-inset ring-white/20">
+            <!-- Subtle ambient card highlight -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/[0.12] via-transparent to-white/[0.05] pointer-events-none"></div>
 
-            <div class="flex items-center justify-between text-slate-400 text-xs font-semibold mb-1">
-                <span>Total Kekayaan Bersih</span>
-                <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded-full">
+            <div class="relative flex items-center justify-between text-white/90 text-xs font-semibold mb-1">
+                <span class="tracking-wide uppercase text-[11px] font-bold">Total Kekayaan Bersih</span>
+                <span class="text-[10px] bg-white/20 text-white border border-white/25 backdrop-blur-xs px-2.5 py-0.5 rounded-full font-bold">
                     {{ $overview->accountsSummary->count() }} Akun Aktif
                 </span>
             </div>
 
-            <div class="text-3xl font-black tracking-tight mb-4">
+            <div class="relative text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-white">
                 @money($overview->totalNetWorth)
             </div>
 
             <!-- Breakdown by Account Type Chips -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 border-t border-white/10 text-xs">
-                <div class="bg-white/5 rounded-xl p-2">
-                    <span class="text-[10px] text-slate-400 block font-medium">Bank</span>
+            <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 border-t border-white/20 text-xs">
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-2.5 border border-white/20 shadow-xs">
+                    <span class="text-[10px] text-white/80 block font-medium">Bank</span>
                     <span class="font-bold text-white text-xs">
                         @money($overview->typeSummary['bank'] ?? \App\Domain\Money\Money::zero())
                     </span>
                 </div>
-                <div class="bg-white/5 rounded-xl p-2">
-                    <span class="text-[10px] text-slate-400 block font-medium">E-Wallet</span>
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-2.5 border border-white/20 shadow-xs">
+                    <span class="text-[10px] text-white/80 block font-medium">E-Wallet</span>
                     <span class="font-bold text-white text-xs">
                         @money($overview->typeSummary['e_wallet'] ?? \App\Domain\Money\Money::zero())
                     </span>
                 </div>
-                <div class="bg-white/5 rounded-xl p-2">
-                    <span class="text-[10px] text-slate-400 block font-medium">Tunai (Kas)</span>
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-2.5 border border-white/20 shadow-xs">
+                    <span class="text-[10px] text-white/80 block font-medium">Tunai (Kas)</span>
                     <span class="font-bold text-white text-xs">
                         @money($overview->typeSummary['cash'] ?? \App\Domain\Money\Money::zero())
                     </span>
                 </div>
-                <div class="bg-white/5 rounded-xl p-2">
-                    <span class="text-[10px] text-slate-400 block font-medium">Investasi</span>
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-2.5 border border-white/20 shadow-xs">
+                    <span class="text-[10px] text-white/80 block font-medium">Investasi</span>
                     <span class="font-bold text-white text-xs">
                         @money($overview->typeSummary['investment'] ?? \App\Domain\Money\Money::zero())
                     </span>

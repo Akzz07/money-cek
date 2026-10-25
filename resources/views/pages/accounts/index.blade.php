@@ -3,10 +3,10 @@
         <!-- Header -->
         <div class="flex items-center justify-between mb-5">
             <div class="flex items-center gap-3">
-                <a href="{{ route('assets.index') }}" class="w-9 h-9 rounded-full bg-white border border-slate-200/80 shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors" aria-label="Kembali">
+                <a href="{{ route('assets.index') }}" class="w-9 h-9 rounded-full bg-white/90 border border-white/60 shadow-xs flex items-center justify-center text-slate-700 hover:bg-white backdrop-blur-sm transition-colors" aria-label="Kembali">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                 </a>
-                <h1 class="text-xl font-bold text-slate-800">Akun Keuangan</h1>
+                <h1 class="text-xl font-extrabold text-white tracking-tight drop-shadow-xs">Akun Keuangan</h1>
             </div>
             
             <x-ui.button :href="route('accounts.create')" size="sm" class="flex items-center gap-1 shadow-xs">

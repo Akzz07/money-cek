@@ -90,10 +90,13 @@
             </x-ui.button>
         </div>
 
-        <!-- Note Aplikasi Privat -->
+        <!-- Register Link -->
         <div class="pt-4 text-center">
-            <p class="text-[11px] text-slate-400">
-                Monetra adalah aplikasi finansial privat. Pendaftaran akun baru dilakukan melalui terminal server.
+            <p class="text-xs text-slate-500">
+                Belum punya akun Monetra? 
+                <a href="{{ route('register') }}" class="font-bold text-sky-600 hover:text-sky-700 hover:underline">
+                    Daftar Sekarang
+                </a>
             </p>
         </div>
     </form>

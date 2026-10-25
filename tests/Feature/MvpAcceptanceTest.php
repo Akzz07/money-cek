@@ -53,8 +53,8 @@ final class MvpAcceptanceTest extends TestCase
 
         $this->actingAs($user);
 
-        // Public registration disabled:
-        $this->get('/register')->assertNotFound();
+        // Authenticated user is redirected away from registration:
+        $this->get('/register')->assertRedirect(route('dashboard'));
 
         // 2. Create 3 Accounts (Bank BCA, GoPay, Tunai)
         $createAccount = app(CreateAccount::class);
