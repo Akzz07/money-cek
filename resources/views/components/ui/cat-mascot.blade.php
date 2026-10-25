@@ -123,19 +123,19 @@
     <!-- Interactive Mascot Button -->
     <button type="button"
             @click="openDialog = true; playMeow();"
-            class="group relative inline-flex items-center gap-1.5 p-1 -m-1 rounded-2xl hover:bg-slate-200/50 dark:hover:bg-slate-800/60 active:scale-95 transition-all focus:outline-none"
+            class="group relative inline-flex items-center justify-center rounded-full hover:scale-105 active:scale-95 transition-transform focus:outline-none"
             title="Klik untuk cek kondisi kucing keuanganmu">
         
-        <!-- Animated Cat Character Container -->
-        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center bg-white/80 dark:bg-slate-800/80 backdrop-blur-md bg-gradient-to-br {{ $glowColor }} border border-white/60 dark:border-white/10 shadow-xs group-hover:shadow-md transition-all p-1">
-            <img src="{{ asset($image) }}" alt="{{ $label }}" class="w-full h-full object-contain {{ $animClass }} select-none pointer-events-none">
-
-            <!-- Mini Status Dot / Mood Indicator -->
-            <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 {{ $dotPingClass }}"></span>
-                <span class="relative inline-flex rounded-full h-3.5 w-3.5 border-2 border-white dark:border-slate-900 {{ $dotClass }}"></span>
-            </span>
+        <!-- Animated Cat Character Container (Circular & Full) -->
+        <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/70 dark:border-white/20 shadow-xs group-hover:shadow-md transition-all overflow-hidden">
+            <img src="{{ asset($image) }}" alt="{{ $label }}" class="w-full h-full object-cover {{ $animClass }} select-none pointer-events-none">
         </div>
+
+        <!-- Mini Status Dot / Mood Indicator -->
+        <span class="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5 z-10 pointer-events-none">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 {{ $dotPingClass }}"></span>
+            <span class="relative inline-flex rounded-full h-3.5 w-3.5 border-2 border-white dark:border-slate-900 {{ $dotClass }}"></span>
+        </span>
 
     </button>
 
@@ -163,9 +163,9 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
 
-            <!-- Mascot Big Avatar in Modal -->
-            <div class="mx-auto w-24 h-24 rounded-3xl flex items-center justify-center bg-gradient-to-br {{ $glowColor }} border border-black/5 dark:border-white/10 shadow-inner mb-3 p-2">
-                <img src="{{ asset($image) }}" alt="{{ $label }}" class="w-full h-full object-contain {{ $animClass }} select-none">
+            <!-- Mascot Big Avatar in Modal (Circular & Full) -->
+            <div class="mx-auto w-24 h-24 rounded-full flex items-center justify-center bg-white/80 dark:bg-slate-800/80 border-2 border-white/80 dark:border-white/20 shadow-md mb-3 overflow-hidden">
+                <img src="{{ asset($image) }}" alt="{{ $label }}" class="w-full h-full object-cover {{ $animClass }} select-none">
             </div>
 
             <!-- Title & Status Tag -->
