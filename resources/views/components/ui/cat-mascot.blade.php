@@ -12,7 +12,7 @@
 
     if ($amount < 100000) {
         $state = 'sick';
-        $image = 'images/maskot_gif_clear/mode_survival.gif';
+        $image = 'images/01_mode_survival.png';
         $label = 'Mode Survival';
         $tagline = 'Status: Mode Survival (< Rp 100rb)';
         $dialogTitle = 'Aduh... Mode Survival Aktif! 🩹';
@@ -22,10 +22,10 @@
         $badgeClass = 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800';
         $dotClass = 'bg-rose-500';
         $dotPingClass = 'bg-rose-400';
-        $animClass = '';
+        $animClass = 'animate-cat-shiver';
     } elseif ($amount <= 500000) {
         $state = 'sick';
-        $image = 'images/maskot_gif_clear/pejuang.gif';
+        $image = 'images/02_pejuang.png';
         $label = 'Pejuang';
         $tagline = 'Status: Pejuang (Rp 100rb - 500rb)';
         $dialogTitle = 'Tetap Semangat, Sang Pejuang! 💪';
@@ -35,10 +35,10 @@
         $badgeClass = 'bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-950/60 dark:text-orange-300 dark:border-orange-800';
         $dotClass = 'bg-orange-500';
         $dotPingClass = 'bg-orange-400';
-        $animClass = '';
+        $animClass = 'animate-cat-shiver';
     } elseif ($amount <= 1000000) {
         $state = 'hungry';
-        $image = 'images/maskot_gif_clear/petualang.gif';
+        $image = 'images/03_petualang.png';
         $label = 'Petualang';
         $tagline = 'Status: Petualang (Rp 500rb - 1jt)';
         $dialogTitle = 'Petualangan Baru Menanti! 🎒';
@@ -48,10 +48,10 @@
         $badgeClass = 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800';
         $dotClass = 'bg-amber-500';
         $dotPingClass = 'bg-amber-400';
-        $animClass = '';
+        $animClass = 'animate-cat-tail';
     } elseif ($amount <= 10000000) {
         $state = 'hungry';
-        $image = 'images/maskot_gif_clear/perintis.gif';
+        $image = 'images/04_perintis.png';
         $label = 'Perintis';
         $tagline = 'Status: Perintis (Rp 1jt - 10jt)';
         $dialogTitle = 'Ngeong! Langkah Perintis Finansial! 🚀';
@@ -61,10 +61,10 @@
         $badgeClass = 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800';
         $dotClass = 'bg-sky-500';
         $dotPingClass = 'bg-sky-400';
-        $animClass = '';
+        $animClass = 'animate-cat-bounce';
     } else {
         $state = 'healthy';
-        $image = 'images/maskot_gif_clear/sultan.gif';
+        $image = 'images/05_sultan.png';
         $label = 'Sultan';
         $tagline = 'Status: Sultan (> Rp 10jt)';
         $dialogTitle = 'Purrr-fect! Meong Sultan Makmur 👑✨';
@@ -74,7 +74,7 @@
         $badgeClass = 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800';
         $dotClass = 'bg-emerald-500';
         $dotPingClass = 'bg-emerald-400';
-        $animClass = '';
+        $animClass = 'animate-cat-bounce';
     }
 @endphp
 

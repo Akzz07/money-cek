@@ -11,6 +11,17 @@
 
         <title>{{ config('app.name', 'Monetra') }}</title>
 
+        <!-- PWA Manifest & Mobile Icons -->
+        <link rel="manifest" href="{{ asset('manifest.json') }}">
+        <meta name="theme-color" content="#0284c7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#0B1528" media="(prefers-color-scheme: dark)">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Monetra">
+        <link rel="apple-touch-icon" href="{{ asset('icons/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('icons/icon-192x192.png') }}">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800&display=swap" rel="stylesheet" />
@@ -48,6 +59,9 @@
 
             <!-- Global Voice Command Assistant Modal -->
             <x-ui.voice-modal />
+
+            <!-- PWA Install Banner -->
+            <x-ui.pwa-install-prompt />
         </div>
     </body>
 </html>
