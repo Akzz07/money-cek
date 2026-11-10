@@ -36,9 +36,9 @@ return [
     ],
 
     'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_id' => env('GOOGLE_CLIENT_ID', '1081458729325-7fumavmg942s2sb5mq1b2t2t112qe8n3.apps.googleusercontent.com'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_REDIRECT_URI', 'http://127.0.0.1:8001/auth/google/callback'),
+        'redirect' => env('GOOGLE_REDIRECT_URI', 'https://money-cek.ethiodeploy.app/auth/google/callback'),
     ],
 
 ];
