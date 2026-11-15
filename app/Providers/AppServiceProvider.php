@@ -8,6 +8,7 @@ use App\Events\TransactionPosted;
 use App\Listeners\RecordTransactionAuditLog;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 final class AppServiceProvider extends ServiceProvider
@@ -25,6 +26,10 @@ final class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         Event::listen(TransactionPosted::class, RecordTransactionAuditLog::class);
 
         Blade::directive('money', function (string $expression) {

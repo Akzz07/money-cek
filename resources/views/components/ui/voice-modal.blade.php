@@ -138,7 +138,7 @@
         this.step = 'processing';
         this.errorMessage = '';
 
-        fetch('{{ route('voice.parse') }}', {
+        fetch('{{ route('voice.parse', absolute: false) }}', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -214,7 +214,7 @@
 
         this.submitting = true;
 
-        fetch('{{ route('transactions.store') }}', {
+        fetch('{{ route('transactions.store', absolute: false) }}', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -242,7 +242,7 @@
         .then(data => {
             this.step = 'saved';
             setTimeout(() => {
-                window.location.href = data.redirect_url || '{{ route('transactions.index') }}';
+                window.location.href = data.redirect_url || '{{ route('transactions.index', absolute: false) }}';
             }, 900);
         })
         .catch(err => {
@@ -261,7 +261,7 @@
             transaction_date: this.parsed.transaction_date || ''
         });
 
-        window.location.href = '{{ route('transactions.create') }}?' + params.toString();
+        window.location.href = '{{ route('transactions.create', absolute: false) }}?' + params.toString();
     },
 
     useExample(text) {
